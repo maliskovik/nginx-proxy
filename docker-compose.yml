@@ -1,0 +1,12 @@
+version: '2'
+services:
+  proxy:
+    container_name: proxy
+    image: kendu/nginx-proxy
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+      - ./certs:/etc/nginx/certs
