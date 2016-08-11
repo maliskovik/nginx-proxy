@@ -43,3 +43,9 @@ api:
 ```
 This api container will now be connected to the proxy_default network as well as the default network that will be created for this project by docker-compose.  
 Only the container which needs to connect to the proxy container should be connected to his network, other containers will connect to the default network by default and need no explicit configuration.
+
+## Backward compatibility
+Unfortunatelly, it's not possible, to set the existing bridge network in the docker-compose.yml file, but it is possible to connect the proxy container to the bridge network after it is created:
+```
+docker network connect bridge proxy
+```
