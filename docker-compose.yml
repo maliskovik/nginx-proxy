@@ -2,7 +2,7 @@ version: '2'
 services:
   proxy:
     container_name: proxy
-    image: kendu/nginx-proxy
+    image: jwilder/nginx-proxy
     restart: always
     ports:
       - 80:80
@@ -10,3 +10,4 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock
       - ./certs:/etc/nginx/certs
+      - ./custom.conf:/etc/nginx/conf.d/custom.conf 
